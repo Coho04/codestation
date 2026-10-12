@@ -3,7 +3,6 @@ name: Release
 on:
   push:
     tags: ['v*']
-  workflow_dispatch:
 
 permissions:
   # Needed to create the release and upload the dmg, zip and latest-mac.yml.
@@ -25,7 +24,6 @@ jobs:
         run: npm ci
 
       - name: Tag matches package.json
-        if: startsWith(github.ref, 'refs/tags/v')
         # A mismatch here would ship a bundle whose in-app version differs from
         # the release it lives in, and the update check compares exactly that.
         run: |
@@ -57,6 +55,41 @@ jobs:
           npm run typecheck
           npm run lint
           npm test
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Before electron-builder, and not by it: the zip and dmg targets
+        # publish concurrently, both find no release, and both create one. The
+        # loser's upload goes nowhere -- which cost the zip that latest-mac.yml
+        # points at, so the release looked complete and no app could update
+        # from it.
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          notes="$RUNNER_TEMP/notes.md"
+          : > "$notes"
+
+          if [ "${{ steps.signing.outputs.developer_id }}" != "true" ]; then
+            {
+              echo "> **Nicht signiert und nicht notarisiert.**"
+              echo "> macOS meldet beim ersten Start, der Entwickler lasse sich nicht verifizieren."
+              echo "> Die [Installationsanleitung](https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/INSTALL.md#2-nicht-signierte-ausgabe-öffnen) beschreibt, was dann zu tun ist."
+              echo "> Diese Ausgabe aktualisiert sich nicht selbst."
+              echo
+            } >> "$notes"
+          fi
+
+          # The changelog entry for exactly this version, up to the next heading.
+          awk -v ver="$version" '
+            $0 ~ "^## \\[" ver "\\]" { inside = 1; next }
+            inside && /^## \[/ { exit }
+            inside { print }
+          ' CHANGELOG.md >> "$notes"
+
+          gh release create "$GITHUB_REF_NAME" \
+            --verify-tag \
+            --title "CodeStation $version" \
+            --notes-file "$notes"
 
       - name: Build
         env:
@@ -91,20 +124,24 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
         run: npx electron-builder --mac --arm64 --publish always
 
-      - name: Note the missing signature in the release
-        if: steps.signing.outputs.developer_id != 'true'
+      - name: The release is actually usable
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # People need to know before they download why macOS will refuse to
-        # open it, and what to do about it. Prepended, not replaced: the notes
-        # electron-builder generated are still the actual changelog.
+        # latest-mac.yml names the files an installed app downloads. If one of
+        # them did not make it into the release, every update attempt fails on
+        # a 404 -- and nothing else notices, because the release page looks
+        # perfectly fine without it.
         run: |
-          existing="$(gh release view "$GITHUB_REF_NAME" --json body -q .body)"
-          {
-            echo "> **Nicht signiert und nicht notarisiert.**"
-            echo "> macOS meldet beim ersten Start, der Entwickler lasse sich nicht verifizieren."
-            echo "> Siehe [Installationsanleitung](https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/INSTALL.md)."
-            echo "> Diese Ausgabe aktualisiert sich nicht selbst."
-            echo
-            echo "$existing"
-          } | gh release edit "$GITHUB_REF_NAME" --notes-file -
+          assets="$(gh release view "$GITHUB_REF_NAME" --json assets -q '.assets[].name')"
+          missing=0
+          for name in $(grep -oE '^\s+- url: .+$' release/latest-mac.yml | sed 's/.*url: //'); do
+            if ! printf '%s\n' "$assets" | grep -qxF "$name"; then
+              echo "::error::$name steht in latest-mac.yml, fehlt aber im Release."
+              missing=1
+            fi
+          done
+          printf '%s\n' "$assets" | grep -qxF 'latest-mac.yml' || {
+            echo "::error::latest-mac.yml fehlt im Release — die Update-Prüfung findet nichts."
+            missing=1
+          }
+          exit "$missing"
