@@ -1,0 +1,28 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-00000000001e",
+  "isSidechain": false,
+  "attachment": {
+    "type": "mcp_instructions_delta",
+    "addedNames": [
+      "claude.ai Claude Docs"
+    ],
+    "addedBlocks": [
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]"
+    ],
+    "removedNames": []
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000001f",
+  "timestamp": "2026-10-07T12:33:08.143Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+    }
+  ],
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "artifact-comment-monitor",
+  "v": 1,
+  "sessionId": "00000000-0000-4000-8000-000000000023",
+  "artifacts": {
+    "2548de6c-62a3-4aeb-8c57-b5a775f33da0": {
+      "state": "armed",
+      "writtenAtMs": 1789114227006,
+      "title": "Lorem ipsum dolor sit amet cons"
+    }
+  }
+}

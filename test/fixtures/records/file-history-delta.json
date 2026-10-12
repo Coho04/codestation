@@ -1,0 +1,13 @@
+{
+  "type": "file-history-delta",
+  "messageId": "00000000-0000-4000-8000-00000000002e",
+  "snapshotMessageId": "00000000-0000-4000-8000-00000000002f",
+  "trackingPath": "homelab/config/magicmirror/docker-compose.yml",
+  "backup": {
+    "backupFileName": null,
+    "version": 1,
+    "backupTime": "2026-10-07T13:19:15.612Z",
+    "realParentDir": "/Users/dev/Desktop/HomeLab/homelab/config/magicmirror"
+  },
+  "timestamp": "2026-10-07T13:19:15.613Z"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "bridge-session",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "bridgeSessionId": "redacted",
+  "lastSequenceNum": 0,
+  "ownerAccountUuid": "redacted",
+  "ownerOrganizationUuid": "redacted"
+}

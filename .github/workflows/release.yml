@@ -1,0 +1,110 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  # Needed to create the release and upload the dmg, zip and latest-mac.yml.
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Tag matches package.json
+        if: startsWith(github.ref, 'refs/tags/v')
+        # A mismatch here would ship a bundle whose in-app version differs from
+        # the release it lives in, and the update check compares exactly that.
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$pkg" ]; then
+            echo "::error::Tag v$tag und package.json $pkg stimmen nicht überein."
+            exit 1
+          fi
+
+      - name: Signing capability
+        id: signing
+        # Everything below branches on this. With a Developer-ID certificate and
+        # notarization credentials the build can update itself; without them it
+        # is still a complete, usable release -- it just points people at the
+        # download instead of replacing itself.
+        run: |
+          if [ -n "${{ secrets.MACOS_CERTIFICATE }}" ] \
+             && [ -n "${{ secrets.APPLE_ID }}" ] \
+             && [ -n "${{ secrets.APPLE_TEAM_ID }}" ]; then
+            echo "developer_id=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "developer_id=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Ohne Developer-ID-Zertifikat: Build ohne Signatur und ohne Selbstaktualisierung."
+          fi
+
+      - name: Verify
+        run: |
+          npm run typecheck
+          npm run lint
+          npm test
+
+      - name: Build
+        env:
+          # Baked into the main bundle at build time, which is why it has to be
+          # set here and not only during packaging. See packages/main/src/update/mode.ts.
+          CS_AUTO_UPDATE: ${{ steps.signing.outputs.developer_id == 'true' && '1' || '' }}
+        run: npm run build
+
+      - name: Package and publish (signed and notarized)
+        if: steps.signing.outputs.developer_id == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_LINK: ${{ secrets.MACOS_CERTIFICATE }}
+          CSC_KEY_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        # Hardened Runtime is a precondition for notarization and is switched on
+        # here rather than in electron-builder.yml, so a local build with an
+        # Apple-Development certificate is unaffected.
+        run: |
+          npx electron-builder --mac --arm64 --publish always \
+            -c.mac.hardenedRuntime=true \
+            -c.mac.notarize=true
+
+      - name: Package and publish (unsigned)
+        if: steps.signing.outputs.developer_id != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Without this electron-builder hunts the runner keychain for any
+          # certificate and fails with a confusing error when it finds none.
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder --mac --arm64 --publish always
+
+      - name: Note the missing signature in the release
+        if: steps.signing.outputs.developer_id != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # People need to know before they download why macOS will refuse to
+        # open it, and what to do about it. Prepended, not replaced: the notes
+        # electron-builder generated are still the actual changelog.
+        run: |
+          existing="$(gh release view "$GITHUB_REF_NAME" --json body -q .body)"
+          {
+            echo "> **Nicht signiert und nicht notarisiert.**"
+            echo "> macOS meldet beim ersten Start, der Entwickler lasse sich nicht verifizieren."
+            echo "> Siehe [Installationsanleitung](https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/INSTALL.md)."
+            echo "> Diese Ausgabe aktualisiert sich nicht selbst."
+            echo
+            echo "$existing"
+          } | gh release edit "$GITHUB_REF_NAME" --notes-file -

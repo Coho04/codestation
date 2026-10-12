@@ -1,0 +1,27 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000015",
+  "isSidechain": false,
+  "attachment": {
+    "type": "model",
+    "identity": {
+      "modelId": "claude-opus-4-7",
+      "marketingName": "Opus 4.7",
+      "knowledgeCutoff": "January 2026"
+    },
+    "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing "
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000017",
+  "timestamp": "2026-09-14T13:30:32.074Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsu"
+    }
+  ],
+  "userType": "external",
+  "entrypoint": "sdk-py",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000016",
+  "version": "2.1.259",
+  "gitBranch": "main"
+}

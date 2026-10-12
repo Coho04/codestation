@@ -1,0 +1,24 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000042",
+  "isSidechain": false,
+  "attachment": {
+    "type": "async_hook_response",
+    "processId": "async_hook_75049",
+    "hookName": "PostToolUse:Write",
+    "hookEvent": "PostToolUse",
+    "response": {},
+    "stdout": "",
+    "stderr": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetu",
+    "exitCode": 0
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000043",
+  "timestamp": "2026-09-16T07:46:26.671Z",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Downloads/Klickdummy v2 2/klickdummy-ng",
+  "sessionId": "00000000-0000-4000-8000-000000000044",
+  "version": "2.1.236",
+  "gitBranch": "HEAD",
+  "slug": "cheeky-riding-octopus"
+}

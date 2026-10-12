@@ -1,0 +1,30 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-00000000002b",
+  "isSidechain": false,
+  "attachment": {
+    "type": "queued_command",
+    "prompt": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol",
+    "commandMode": "task-notification",
+    "timestamp": "2026-10-07T12:35:53.607Z"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000002d",
+  "timestamp": "2026-10-07T12:35:53.607Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+    }
+  ],
+  "renderedInHumanTurn": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+    }
+  ],
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}

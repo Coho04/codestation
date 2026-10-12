@@ -1,0 +1,18 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000027",
+  "isSidechain": false,
+  "attachment": {
+    "type": "command_permissions",
+    "allowedTools": []
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000028",
+  "timestamp": "2026-10-07T12:33:21.281Z",
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}

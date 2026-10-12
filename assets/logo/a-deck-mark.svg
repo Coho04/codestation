@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!--
+    The same deck, drawn for the title bar at roughly 18 px rather than scaled
+    down from the app icon. At that size the squircle, the threshold bars and
+    the second dash all cost more than they give, so the mark keeps the angled
+    strip and one centreline — the least that still reads as a runway.
+  -->
+  <g transform="rotate(-13 12 12)">
+    <rect x="8.2" y="1.5" width="7.6" height="21" rx="1.2" fill="currentColor" opacity="0.28"/>
+    <rect x="10.6" y="6" width="2.8" height="5" rx="1.4" fill="#38bdf8"/>
+    <rect x="10.6" y="13" width="2.8" height="5" rx="1.4" fill="#38bdf8"/>
+  </g>
+</svg>

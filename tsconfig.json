@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "packages/shared"
+    },
+    {
+      "path": "packages/preload"
+    },
+    {
+      "path": "packages/indexer"
+    },
+    {
+      "path": "packages/main"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000030",
+  "isSidechain": false,
+  "attachment": {
+    "type": "plan_mode",
+    "reminderType": "full",
+    "isSubAgent": false,
+    "planFilePath": "/Users/dev/.claude/plans/ich-m-chte-das-du-lucky-phoenix.md",
+    "planExists": false
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000031",
+  "timestamp": "2026-09-10T12:21:24.960Z",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000023",
+  "version": "2.1.236",
+  "gitBranch": "HEAD",
+  "slug": "ich-m-chte-das-du-lucky-phoenix"
+}

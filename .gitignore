@@ -1,0 +1,9 @@
+node_modules/
+dist/
+release/
+.angular/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.DS_Store
+.typecheck-out/

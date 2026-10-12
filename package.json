@@ -1,0 +1,65 @@
+{
+  "name": "codestation",
+  "version": "0.1.0",
+  "description": "Desktop-App für macOS, die Claude-Code-Projekte, -Sessions und -Kosten verwaltet — und das Terminal ist, in dem die Sessions laufen.",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/shared",
+    "packages/preload",
+    "packages/indexer",
+    "packages/main",
+    "packages/renderer"
+  ],
+  "main": "packages/main/dist/main.cjs",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "build:main": "node packages/main/esbuild.config.mjs",
+    "build:preload": "node packages/preload/esbuild.config.mjs",
+    "build:renderer": "npm run build --workspace @cs/renderer",
+    "package": "npm run build && electron-builder --mac --arm64 --dir",
+    "package:dist": "npm run build && electron-builder --mac --arm64",
+    "release": "npm run build && electron-builder --mac --arm64 --publish always",
+    "typecheck": "tsc -b --pretty && tsc -p tsconfig.test.json --pretty && npm run typecheck --workspace @cs/renderer",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build:indexer": "node packages/indexer/esbuild.config.mjs",
+    "test:e2e": "playwright test",
+    "logo:render": "electron scripts/render-logo.mjs",
+    "logo": "npm run logo:render && ./scripts/build-icns.sh"
+  },
+  "dependencies": {
+    "better-sqlite3": "13.0.3",
+    "electron-updater": "^6.8.9",
+    "node-pty": "1.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.10.1",
+    "electron": "44.7.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "typescript": "~6.0.0",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coho04/codestation.git"
+  },
+  "homepage": "https://github.com/Coho04/codestation",
+  "bugs": {
+    "url": "https://github.com/Coho04/codestation/issues"
+  }
+}

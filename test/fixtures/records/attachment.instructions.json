@@ -1,0 +1,28 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000018",
+  "isSidechain": false,
+  "attachment": {
+    "type": "instructions",
+    "files": [
+      {
+        "path": "/Users/dev/.claude/projects/-Users-dev-Desktop-HomeLab/memory/MEMORY.md",
+        "type": "AutoMem",
+        "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing "
+      }
+    ]
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000019",
+  "timestamp": "2026-09-14T13:30:32.085Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+    }
+  ],
+  "userType": "external",
+  "entrypoint": "sdk-py",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000016",
+  "version": "2.1.259",
+  "gitBranch": "main"
+}

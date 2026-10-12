@@ -1,0 +1,149 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000029",
+  "isSidechain": false,
+  "attachment": {
+    "type": "deferred_tools_record",
+    "entries": [
+      {
+        "name": "mcp__claude_ai_Claude_Docs__batch",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do ei",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "batch": {
+              "type": "array"
+            },
+            "container": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "create": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "verbose": {
+              "type": "boolean"
+            },
+            "opId": {
+              "type": "string"
+            }
+          }
+        },
+        "eager_input_streaming": true,
+        "defer_loading": true
+      },
+      {
+        "name": "mcp__claude_ai_Claude_Docs__guide",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod"
+            }
+          }
+        },
+        "eager_input_streaming": true,
+        "defer_loading": true
+      },
+      {
+        "name": "mcp__claude_ai_Claude_Docs__update",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "object",
+              "properties": {
+                "object": {
+                  "type": "string",
+                  "enum": [
+                    "project",
+                    "file",
+                    "node",
+                    "utterance",
+                    "enum"
+                  ]
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "object",
+                "id"
+              ]
+            },
+            "engine": {
+              "type": "string"
+            },
+            "payload": {
+              "anyOf": [
+                {
+                  "type": "object"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "container": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "id"
+              ]
+            },
+            "verbose": {
+              "type": "boolean"
+            },
+            "opId": {
+              "type": "string"
+            },
+            "answering": {
+              "type": "string",
+              "maxLength": 64
+            }
+          },
+          "required": [
+            "ref",
+            "payload"
+          ]
+        },
+        "eager_input_streaming": true,
+        "defer_loading": true
+      }
+    ]
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000002a",
+  "timestamp": "2026-10-07T12:33:21.288Z",
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+/* xterm positions its rows and cursor from this sheet; without it the
+   terminal renders as a pile of unpositioned spans. */
+@import "@xterm/xterm/css/xterm.css";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  overflow: hidden;
+}

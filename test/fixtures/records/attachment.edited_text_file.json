@@ -1,0 +1,19 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-00000000000e",
+  "isSidechain": false,
+  "attachment": {
+    "type": "edited_text_file",
+    "filename": "/Users/dev/Desktop/HomeNetwork.md",
+    "snippet": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000000f",
+  "timestamp": "2026-08-31T18:46:45.335Z",
+  "session_id": "00000000-0000-4000-8000-000000000002",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "version": "2.1.236",
+  "gitBranch": "HEAD"
+}

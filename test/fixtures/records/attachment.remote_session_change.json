@@ -1,0 +1,26 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000024",
+  "isSidechain": false,
+  "attachment": {
+    "type": "remote_session_change",
+    "url": null,
+    "commit": "Co-Authored-By: Claude Opus 4.8 <dev@example.invalid>",
+    "pr": "🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+    "sendUserFileHint": false
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000025",
+  "timestamp": "2026-10-07T12:33:08.394Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectet"
+    }
+  ],
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}

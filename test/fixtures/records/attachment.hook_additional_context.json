@@ -1,0 +1,22 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000005",
+  "isSidechain": false,
+  "attachment": {
+    "type": "hook_additional_context",
+    "content": [
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+    ],
+    "hookName": "SessionStart",
+    "toolUseID": "SessionStart",
+    "hookEvent": "SessionStart"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000001",
+  "timestamp": "2026-08-31T18:33:14.837Z",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "version": "2.1.236",
+  "gitBranch": "HEAD"
+}

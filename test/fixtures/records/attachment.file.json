@@ -1,0 +1,30 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-00000000003e",
+  "isSidechain": false,
+  "attachment": {
+    "type": "file",
+    "filename": "/Users/dev/Documents/ClickDummy_IssueSystem/README.md",
+    "content": {
+      "type": "text",
+      "file": {
+        "filePath": "/Users/dev/Documents/ClickDummy_IssueSystem/README.md",
+        "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol",
+        "numLines": 111,
+        "startLine": 1,
+        "totalLines": 111
+      }
+    },
+    "displayPath": "README.md"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000003f",
+  "timestamp": "2026-09-07T09:47:00.586Z",
+  "session_id": "00000000-0000-4000-8000-000000000040",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Documents/ClickDummy_IssueSystem",
+  "sessionId": "00000000-0000-4000-8000-000000000040",
+  "version": "2.1.236",
+  "gitBranch": "main",
+  "slug": "ok-schau-dir-das-steady-stearns"
+}

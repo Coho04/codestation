@@ -1,0 +1,7 @@
+{
+  "type": "history-suppression",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "cause": "restored_owner_mismatch",
+  "vetoedAgainstAccountUuid": "00000000-0000-4000-8000-000000000013",
+  "ts": "2026-10-08T08:37:39.178Z"
+}

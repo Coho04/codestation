@@ -1,0 +1,26 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000021",
+  "isSidechain": false,
+  "attachment": {
+    "type": "session_context",
+    "context": {
+      "userEmail": "The user's email address is dev@example.invalid. Use it only to identify the user, such as for authorship, attribution, or filtering their own work. Never send it to an unrelated service, such as in a request header, URL, or payload, unless the user explicitly asks.",
+      "gitStatus": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]"
+    }
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000022",
+  "timestamp": "2026-10-07T12:33:08.393Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+    }
+  ],
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}

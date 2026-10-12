@@ -1,0 +1,20 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-00000000001b",
+  "isSidechain": false,
+  "attachment": {
+    "type": "structured_output",
+    "data": {
+      "findings": []
+    },
+    "toolUseID": "toolu_014bUPJ8TK3WEFGrqWgN861f"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000001c",
+  "timestamp": "2026-09-21T13:22:28.653Z",
+  "userType": "external",
+  "entrypoint": "sdk-py",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-00000000001d",
+  "version": "2.1.259",
+  "gitBranch": "main"
+}

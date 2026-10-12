@@ -1,0 +1,17 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-00000000000b",
+  "isSidechain": false,
+  "attachment": {
+    "type": "total_tokens_reminder",
+    "text": "<total_tokens>14929458 tokens left</total_tokens>"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000000c",
+  "timestamp": "2026-08-31T18:33:53.447Z",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "version": "2.1.236",
+  "gitBranch": "HEAD"
+}

@@ -1,0 +1,30 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000014",
+  "isSidechain": false,
+  "attachment": {
+    "type": "environment",
+    "snapshot": {
+      "workingDirectory": "/Users/dev/Desktop/HomeLab",
+      "isWorktree": false,
+      "isGitRepo": true,
+      "additionalWorkingDirectories": [],
+      "platform": "darwin",
+      "shell": "zsh",
+      "osVersion": "Darwin 25.6.0"
+    }
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000015",
+  "timestamp": "2026-09-14T13:30:32.074Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit"
+    }
+  ],
+  "userType": "external",
+  "entrypoint": "sdk-py",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000016",
+  "version": "2.1.259",
+  "gitBranch": "main"
+}

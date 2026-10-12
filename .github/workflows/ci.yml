@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    # macOS, and not for convenience: node-pty and better-sqlite3 are rebuilt
+    # against the Electron ABI by the postinstall hook, and the end-to-end suite
+    # launches a real Electron window. Neither is meaningful on another OS --
+    # the app only targets macOS.
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install
+        # postinstall runs electron-builder install-app-deps, which compiles the
+        # native modules. That is the slow step and the one worth caching.
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: End-to-end tests
+        # Drives Electron against test/fixtures/bin/fake-claude, so no Claude
+        # installation and no ~/.claude data are needed.
+        run: npm run test:e2e
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

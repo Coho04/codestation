@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!--
+    Only used when the Hardened Runtime is switched on, which happens exactly
+    for notarized Developer-ID builds (see .github/workflows/release.yml). A
+    local "Apple Development" build does not enable it and ignores this file.
+
+    The app is deliberately NOT sandboxed: it reads ~/.claude and spawns the
+    Claude CLI in arbitrary project directories. A sandbox would make both
+    impossible.
+  -->
+
+  <!-- V8 compiles JavaScript at runtime. Without these two, Electron crashes
+       on launch under the Hardened Runtime. -->
+  <key>com.apple.security.cs.allow-jit</key>
+  <true/>
+  <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+  <true/>
+
+  <!-- better-sqlite3 and node-pty load .node binaries that are signed as part
+       of the bundle but not by the same team as the Electron framework. -->
+  <key>com.apple.security.cs.disable-library-validation</key>
+  <true/>
+
+  <!-- The login-shell probe runs $SHELL with an inherited environment; without
+       this the Hardened Runtime strips the variables it is meant to collect. -->
+  <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+  <true/>
+</dict>
+</plist>

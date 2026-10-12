@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- G: Prompt. The chevron and the block cursor, nothing else. The most
+       legible mark of the set at every size, and the least ambiguous about what
+       kind of program this is. -->
+  <path d="M512 96c232 0 320 88 320 320v192c0 232-88 320-320 320s-320-88-320-320V416c0-232 88-320 320-320z" fill="#0a0a0a"/>
+
+  <path d="M330 368 L498 512 L330 656" fill="none" stroke="#38bdf8"
+        stroke-width="92" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="566" y="594" width="160" height="62" rx="18" fill="#f1f5f9"/>
+
+  <path d="M512 96c232 0 320 88 320 320v192c0 232-88 320-320 320s-320-88-320-320V416c0-232 88-320 320-320z"
+        fill="none" stroke="#303030" stroke-width="8"/>
+</svg>

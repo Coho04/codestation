@@ -1,0 +1,22 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000019",
+  "isSidechain": false,
+  "attachment": {
+    "type": "date",
+    "date": "2026-09-14"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000001a",
+  "timestamp": "2026-09-14T13:30:32.086Z",
+  "rendered": [
+    {
+      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do ei"
+    }
+  ],
+  "userType": "external",
+  "entrypoint": "sdk-py",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000016",
+  "version": "2.1.259",
+  "gitBranch": "main"
+}

@@ -1,0 +1,40 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000039",
+  "isSidechain": false,
+  "attachment": {
+    "type": "invoked_skills",
+    "skills": [
+      {
+        "name": "artifact-diagramming",
+        "path": "bundled:artifact-diagramming",
+        "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+      },
+      {
+        "name": "artifact-design",
+        "path": "bundled:artifact-design",
+        "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+      },
+      {
+        "name": "brief",
+        "path": "projectSettings:brief",
+        "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+      },
+      {
+        "name": "superpowers:brainstorming",
+        "path": "plugin:superpowers:brainstorming",
+        "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol"
+      }
+    ]
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-00000000003a",
+  "timestamp": "2026-09-11T13:58:24.899Z",
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000023",
+  "version": "2.1.236",
+  "gitBranch": "HEAD",
+  "slug": "ich-m-chte-das-du-lucky-phoenix"
+}

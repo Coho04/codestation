@@ -1,0 +1,89 @@
+appId: de.mediacologne.codestation
+productName: CodeStation
+# Frozen after the first signed build: macOS binds TCC grants (Documents,
+# Desktop, Downloads) to the pair (appId, signing identity). Changing either
+# revokes every folder permission — including the ones the PTY children inherit.
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - package.json
+  - assets/logo/icon-512.png
+  - packages/main/dist/**
+  - packages/preload/dist/**
+  - packages/indexer/dist/**
+  - packages/renderer/dist/**
+
+  # Dead weight, verified rather than assumed:
+  #  - better-sqlite3 loads prebuilds/darwin-arm64.node (prebuildify, NOT
+  #    build/Release), so the other seven platforms go and that one stays.
+  #  - node-pty is the other way round: it loads build/Release/pty.node, so its
+  #    prebuilds directory is unused here.
+  #  - deps/ and src/ are the SQLite C sources, needed only to compile.
+  - "!node_modules/better-sqlite3/prebuilds/{darwin-x64,linux-arm64,linux-x64,linuxmusl-arm64,linuxmusl-x64,win32-arm64,win32-x64}.node"
+  - "!node_modules/better-sqlite3/deps/**"
+  - "!node_modules/better-sqlite3/src/**"
+  - "!node_modules/node-pty/prebuilds/**"
+  - "!node_modules/node-pty/src/**"
+  - "!node_modules/**/*.{cc,cpp,h,hpp,gyp,gypi,map}"
+  - "!node_modules/**/{test,__tests__,docs,example,examples}/**"
+
+asar: true
+asarUnpack:
+  # .node binaries cannot be loaded from inside the archive.
+  - "**/node_modules/node-pty/**"
+  - "**/node_modules/better-sqlite3/**"
+  # utilityProcess.fork spawns a real OS process, so its entry point has to be a
+  # real file. Inside the asar it simply never starts — and in a dev build the
+  # file is on disk, so the failure only appears once packaged.
+  - "packages/indexer/dist/**"
+
+mac:
+  icon: assets/logo/CodeStation.icns
+  category: public.app-category.developer-tools
+  target:
+    # zip is not optional: Squirrel.Mac, and therefore electron-updater, can
+    # only consume a zip. The dmg exists for people who install by hand.
+    - target: dmg
+      arch: [arm64]
+    - target: zip
+      arch: [arm64]
+
+  # No `identity` here on purpose. It is a per-machine value and would be wrong
+  # for everyone else, so it comes from the CSC_NAME environment variable --
+  # electron-builder reads it by itself. See docs/INSTALL.md.
+  #
+  # Signing with a real identity rather than ad-hoc matters even for a local
+  # build: an ad-hoc signature yields a new cdhash every time, which makes macOS
+  # ask for folder access again after each rebuild.
+
+  # Switched on from the outside for release builds (-c.mac.hardenedRuntime=true)
+  # because notarization requires it and a local Apple-Development build cannot
+  # be notarized anyway.
+  hardenedRuntime: false
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  extendInfo:
+    NSDocumentsFolderUsageDescription: >-
+      CodeStation liest Claude-Code-Transcripts und startet Sessions in Projekten,
+      die unter „Dokumente“ liegen.
+    NSDesktopFolderUsageDescription: >-
+      CodeStation liest Claude-Code-Transcripts und startet Sessions in Projekten,
+      die auf dem Schreibtisch liegen.
+    NSDownloadsFolderUsageDescription: >-
+      CodeStation liest Claude-Code-Transcripts und startet Sessions in Projekten,
+      die unter „Downloads“ liegen.
+
+dmg:
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+# Where the in-app updater looks for new versions, and where `--publish` uploads
+# them. The generated latest-mac.yml in the release is what electron-updater
+# reads; without a publish provider electron-builder would not write it.
+publish:
+  provider: github
+  owner: Coho04
+  repo: codestation
+  releaseType: release

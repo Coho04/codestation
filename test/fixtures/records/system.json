@@ -1,0 +1,35 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000010",
+  "isSidechain": false,
+  "type": "system",
+  "subtype": "stop_hook_summary",
+  "hookCount": 3,
+  "hookInfos": [
+    {
+      "command": "/Users/dev/.claude/skills/gstack/hosts/claude/hooks/timeline-stop-hook",
+      "durationMs": 196
+    },
+    {
+      "command": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet"
+    },
+    {
+      "command": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed d"
+    }
+  ],
+  "hookErrors": [],
+  "hookAdditionalContext": [],
+  "preventedContinuation": false,
+  "stopReason": "",
+  "hasOutput": false,
+  "level": "suggestion",
+  "timestamp": "2026-08-31T18:54:33.444Z",
+  "uuid": "00000000-0000-4000-8000-000000000011",
+  "toolUseID": "00000000-0000-4000-8000-000000000012",
+  "session_id": "00000000-0000-4000-8000-000000000002",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "version": "2.1.236",
+  "gitBranch": "HEAD"
+}

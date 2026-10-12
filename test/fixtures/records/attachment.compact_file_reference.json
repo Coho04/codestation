@@ -1,0 +1,20 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000037",
+  "isSidechain": false,
+  "attachment": {
+    "type": "compact_file_reference",
+    "filename": "/private/tmp/claude-502/-Users-dev-Desktop-HomeLab/00000000-0000-4000-8000-000000000023/scratchpad/wohnung-rekonstruktion.html",
+    "displayPath": "../../../../private/tmp/claude-502/-Users-dev-Desktop-HomeLab/00000000-0000-4000-8000-000000000023/scratchpad/wohnung-rekonstruktion.html"
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000038",
+  "timestamp": "2026-09-11T13:58:24.899Z",
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000023",
+  "version": "2.1.236",
+  "gitBranch": "HEAD",
+  "slug": "ich-m-chte-das-du-lucky-phoenix"
+}

@@ -1,0 +1,23 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000001",
+  "isSidechain": false,
+  "promptId": "00000000-0000-4000-8000-000000000007",
+  "type": "user",
+  "message": {
+    "role": "user",
+    "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit "
+  },
+  "uuid": "00000000-0000-4000-8000-000000000006",
+  "timestamp": "2026-08-31T18:33:53.448Z",
+  "permissionMode": "auto",
+  "origin": {
+    "kind": "human"
+  },
+  "promptSource": "typed",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "version": "2.1.236",
+  "gitBranch": "HEAD"
+}

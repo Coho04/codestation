@@ -1,0 +1,4 @@
+#!/bin/sh
+# Thin wrapper so the resolver sees an ordinary executable, as it would a real
+# Homebrew-installed binary.
+exec node "$(cd "$(dirname "$0")" && pwd)/fake-claude.mjs" "$@"

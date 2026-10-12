@@ -1,0 +1,25 @@
+{
+  "parentUuid": null,
+  "isSidechain": false,
+  "attachment": {
+    "type": "hook_success",
+    "hookName": "SessionStart:startup",
+    "toolUseID": "00000000-0000-4000-8000-000000000003",
+    "hookEvent": "SessionStart",
+    "content": "",
+    "stdout": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dol",
+    "stderr": "",
+    "exitCode": 0,
+    "command": "Lorem ipsum dolor sit amet consectetur adipiscing elit s",
+    "durationMs": 149
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000004",
+  "timestamp": "2026-08-31T18:33:14.835Z",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop",
+  "sessionId": "00000000-0000-4000-8000-000000000002",
+  "version": "2.1.236",
+  "gitBranch": "HEAD"
+}

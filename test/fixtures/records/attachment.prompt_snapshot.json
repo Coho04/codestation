@@ -1,0 +1,31 @@
+{
+  "parentUuid": "00000000-0000-4000-8000-000000000025",
+  "isSidechain": false,
+  "attachment": {
+    "type": "prompt_snapshot",
+    "systemPrompt": [
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]",
+      "__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__",
+      "Write code that reads like the surrounding code: match its comment density, naming, and idiom.",
+      "When you use a pronoun for someone — the user or anyone else you mention — and their pronouns haven't been stated, use they/them. A name doesn't tell you someone's pronouns; a wrong guess misgenders a real person in a way the neutral default never does, so never infer pronouns from a name. This applies to all user-visible text, including visible thinking.",
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]",
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]",
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]",
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor Lorem ipsum dolor sit amet consectetur adip[gekürzt]",
+      "# Context management\nWhen the conversation grows long, some or all of the current context is summarized; the summary, along with any remaining unsummarized context, is provided in the next context window so work can continue — you don't need to wrap up early or hand off mid-task.",
+      "When you have enough information to act, act. Do not re-derive facts already established in the conversation, re-litigate a decision the user has already made, or narrate options you will not pursue. If you are weighing a choice, give a recommendation, not an exhaustive survey",
+      "EndConversation (deferred tool): use only for sustained user abuse directed at the assistant, or when the user explicitly asks to see it demonstrated. Load the full guidance via ToolSearch(\"select:EndConversation\") before using it.",
+      "<total_tokens>14929458 tokens left</total_tokens>"
+    ]
+  },
+  "type": "attachment",
+  "uuid": "00000000-0000-4000-8000-000000000026",
+  "timestamp": "2026-10-07T12:33:08.394Z",
+  "session_id": "00000000-0000-4000-8000-000000000023",
+  "userType": "external",
+  "entrypoint": "cli",
+  "cwd": "/Users/dev/Desktop/HomeLab",
+  "sessionId": "00000000-0000-4000-8000-000000000020",
+  "version": "2.1.267",
+  "gitBranch": "main"
+}
