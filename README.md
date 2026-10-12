@@ -121,7 +121,7 @@ Renderer-Änderungen lädt der Dev-Server selbst nach.
 npm run typecheck
 npm run lint         # inklusive der Architektur-Grenzen (siehe unten)
 npm test             # Unit- und Repository-Tests
-npm run test:e2e     # Playwright gegen Electron, mit einem gefälschten claude-Binary
+npm run build && npm run test:e2e   # Playwright gegen Electron, mit gefälschtem claude-Binary
 
 # Smoke-Checks gegen die echte Installation bzw. das gepackte Bundle
 CS_SMOKE=1     npm run dev                      # startet, prüft die Bridge, beendet sich

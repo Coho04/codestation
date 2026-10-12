@@ -7,5 +7,7 @@ export default defineConfig({
   fullyParallel: false,
   timeout: 120_000,
   expect: { timeout: 30_000 },
-  reporter: [['list']],
+  // The HTML report only exists to be uploaded as a CI artifact; locally the
+  // list reporter in the terminal is the whole story.
+  reporter: process.env['CI'] ? [['list'], ['html', { open: 'never' }]] : [['list']],
 });
