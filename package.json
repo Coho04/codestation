@@ -1,7 +1,7 @@
 {
   "name": "codestation",
   "version": "0.1.0",
-  "description": "Desktop-App f\u00fcr macOS, die Claude-Code-Projekte, -Sessions und -Kosten verwaltet \u2014 und das Terminal ist, in dem die Sessions laufen.",
+  "description": "Desktop-App für macOS, die Claude-Code-Projekte, -Sessions und -Kosten verwaltet — und das Terminal ist, in dem die Sessions laufen.",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -15,7 +15,7 @@
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "dev": "node scripts/dev.mjs",
-    "build": "sh ./.ci-1v09zt.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi; node scripts/build.mjs",
+    "build": "node scripts/build.mjs",
     "build:main": "node packages/main/esbuild.config.mjs",
     "build:preload": "node packages/preload/esbuild.config.mjs",
     "build:renderer": "npm run build --workspace @cs/renderer",
