@@ -10,5 +10,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    # Angular-Pakete muessen dieselbe Version haben, einzeln gebumpt bricht die App
+    groups:
+      angular:
+        patterns:
+          - "@angular/*"
+          - "@angular-devkit/*"
     assignees:
       - "Coho04"
