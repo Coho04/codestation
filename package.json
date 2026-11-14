@@ -42,7 +42,7 @@
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.10.1",
     "electron": "44.9.1",
-    "electron-builder": "^26.15.3",
+    "electron-builder": "^26.18.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.14.0",
     "globals": "^17.13.0",
